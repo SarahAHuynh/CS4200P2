@@ -4,12 +4,9 @@ import time
 
 
 def generate_board(n, rng=None):
-    """
-    Generate a random N-Queens board.
-
-    Each column has exactly one queen.
-    The value at each index represents the queen's row.
-    """
+    # generate a random N-Queens board w each column having exactly one queen
+    # value at each index represents the queen's row
+    
     if n < 4:
         raise ValueError("N must be at least 4.")
 
@@ -20,12 +17,10 @@ def generate_board(n, rng=None):
 
 
 def count_conflicts(board):
-    """
-    Count the number of pairs of queens attacking each other.
-
-    Queens conflict if they share the same row or diagonal.
-    Each pair is counted only once.
-    """
+    # count number of pairs of queens attacking each other
+    # queens conflict if they share the same row or diagonal
+    # each pair is counted only once.
+    
     conflicts = 0
     n = len(board)
 
@@ -41,17 +36,13 @@ def count_conflicts(board):
 
 
 def steepest_ascent(initial_board, rng=None):
-    """
-    Solve N-Queens using steepest-ascent hill climbing.
+    #  solve N-Queens using steepest-ascent hill climbing
 
-    Every possible vertical queen move is considered.
-    Only moves that strictly reduce conflicts are accepted.
+    # every possible vertical queen move is considered
+    # only moves that strictly reduce conflicts are accepted
 
-    Returns:
-        final_board: Board when the search stops
-        steps: Number of accepted queen moves
-        solved: Whether a valid solution was found
-    """
+    # returns final_board, steps, and if solution was found or not
+    
     if rng is None:
         rng = random.Random()
 
@@ -65,11 +56,11 @@ def steepest_ascent(initial_board, rng=None):
         best_conflicts = current_conflicts
         best_moves = []
 
-        # Examine every queen in every column.
+        # examine every queen in every column
         for col in range(n):
             original_row = current_board[col]
 
-            # Try placing this queen in every other row.
+            # try placing this queen in every other row
             for row in range(n):
                 if row == original_row:
                     continue
@@ -88,15 +79,14 @@ def steepest_ascent(initial_board, rng=None):
                 ):
                     best_moves.append((col, row))
 
-            # Restore the queen before examining the next column.
+            # restore the queen before looking at next column
             current_board[col] = original_row
 
-        # Stop if no neighbor strictly improves the heuristic.
-        # This prevents sideways moves.
+        # stop if no neighbor improves the heuristic (prevents sideways moves)
         if not best_moves:
             break
 
-        # Randomly choose among equally good improving moves.
+        # randomly choose equally good moves
         best_col, best_row = rng.choice(best_moves)
 
         current_board[best_col] = best_row
@@ -109,9 +99,7 @@ def steepest_ascent(initial_board, rng=None):
 
 
 def print_board(board):
-    """
-    Display the board with Q for queens and . for empty spaces.
-    """
+    # print board with Q for queens and . for empty spaces
     n = len(board)
 
     for row in range(n):
@@ -127,9 +115,8 @@ def print_board(board):
 
 
 def run_hill_climbing(n, seed=None):
-    """
-    Generate one random N-Queens problem and run hill climbing.
-    """
+    # generate one random N-Queens problem and run hill climbing
+    
     rng = random.Random(seed)
 
     initial_board = generate_board(n, rng)
@@ -158,15 +145,13 @@ def run_hill_climbing(n, seed=None):
     print("\nFinal Configuration:")
     print_board(final_board)
 
+    print(f"Valid Termination: {verify_local_minimum(final_board)}")
     print()
 
     return final_board, steps, solved, elapsed_time
-	print(f"Valid Termination: {verify_local_minimum(final_board)}")
 
 def test_conflicts():
-    """
-    Test the heuristic against boards with known conflict counts.
-    """
+    # test heuristic against boards with known conflict counts
     test_cases = [
         ([0, 0, 0, 0], 6),
         ([0, 1, 2, 3], 6),
@@ -186,7 +171,7 @@ def test_conflicts():
 
 
 def verify_local_minimum(board):
-    """Check that no single queen move reduces conflicts."""
+    #check that no single queen move reduces conflicts
     n = len(board)
     current_conflicts = count_conflicts(board)
 
@@ -206,7 +191,7 @@ def verify_local_minimum(board):
 def main():
     test_conflicts()
 
-    # One independent hill-climbing attempt for each board size.
+    # 1 independent hill-climbing attempt for each board size
     for n in [8, 12, 16]:
         run_hill_climbing(n)
 
