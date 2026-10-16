@@ -1,0 +1,130 @@
+============================================
+       CS4200 P2 - N-QUEENS SOLVER
+============================================
+
+[1] Generate a Random N-Queens Board
+[2] Enter a Board Manually
+[3] Run 200-Case Analysis
+[4] Exit
+Enter your choice: Enter your choice: 2
+Board size (8, 12, or 16): Board size (8, 12, or 16): 8
+Enter 8 row numbers from 0 to 7.
+Each number gives the row of the queen in that column.
+Board: Board: 5 2 6 3 0 7 1 4
+
+[1] Steepest-Ascent Hill Climbing
+[2] Min-Conflicts
+Choose an algorithm: Choose an algorithm: 2
+
+=======================================================
+MIN-CONFLICTS | N = 8
+=======================================================
+Initial Board: [5, 2, 6, 3, 0, 7, 1, 4]
+Initial Conflicts: 0
+Final Board: [5, 2, 6, 3, 0, 7, 1, 4]
+Final Conflicts: 0
+Steps Taken: 0
+Running Time: 0.0246 ms
+Solved: True
+Final Configuration:
+. . . . Q . . .
+. . . . . . Q .
+. Q . . . . . .
+. . . Q . . . .
+. . . . . . . Q
+Q . . . . . . .
+. . Q . . . . .
+. . . . . Q . .
+Solution Verified: True
+
+
+[1] Generate a Random N-Queens Board
+[2] Enter a Board Manually
+[3] Run 200-Case Analysis
+[4] Exit
+Enter your choice: Enter your choice: 2
+Board size (8, 12, or 16): Board size (8, 12, or 16): 12
+Enter 12 row numbers from 0 to 11.
+Each number gives the row of the queen in that column.
+Board: Board: 7 0 6 3 9 11 4 2 10 5 1 8
+
+[1] Steepest-Ascent Hill Climbing
+[2] Min-Conflicts
+Choose an algorithm: Choose an algorithm: 2
+
+=======================================================
+MIN-CONFLICTS | N = 12
+=======================================================
+Initial Board: [7, 0, 6, 3, 9, 11, 4, 2, 10, 5, 1, 8]
+Initial Conflicts: 0
+Final Board: [7, 0, 6, 3, 9, 11, 4, 2, 10, 5, 1, 8]
+Final Conflicts: 0
+Steps Taken: 0
+Running Time: 0.0227 ms
+Solved: True
+Final Configuration:
+. Q . . . . . . . . . .
+. . . . . . . . . . Q .
+. . . . . . . Q . . . .
+. . . Q . . . . . . . .
+. . . . . . Q . . . . .
+. . . . . . . . . Q . .
+. . Q . . . . . . . . .
+Q . . . . . . . . . . .
+. . . . . . . . . . . Q
+. . . . Q . . . . . . .
+. . . . . . . . Q . . .
+. . . . . Q . . . . . .
+Solution Verified: True
+
+
+[1] Generate a Random N-Queens Board
+[2] Enter a Board Manually
+[3] Run 200-Case Analysis
+[4] Exit
+Enter your choice: Enter your choice: 2
+Board size (8, 12, or 16): Board size (8, 12, or 16): 16
+Enter 16 row numbers from 0 to 15.
+Each number gives the row of the queen in that column.
+Board: Board: 3 5 9 12 1 11 14 7 4 10 0 2 6 15 13 8
+
+[1] Steepest-Ascent Hill Climbing
+[2] Min-Conflicts
+Choose an algorithm: Choose an algorithm: 2
+
+=======================================================
+MIN-CONFLICTS | N = 16
+=======================================================
+Initial Board: [3, 5, 9, 12, 1, 11, 14, 7, 4, 10, 0, 2, 6, 15, 13, 8]
+Initial Conflicts: 0
+Final Board: [3, 5, 9, 12, 1, 11, 14, 7, 4, 10, 0, 2, 6, 15, 13, 8]
+Final Conflicts: 0
+Steps Taken: 0
+Running Time: 0.0227 ms
+Solved: True
+Final Configuration:
+. . . . . . . . . . Q . . . . .
+. . . . Q . . . . . . . . . . .
+. . . . . . . . . . . Q . . . .
+Q . . . . . . . . . . . . . . .
+. . . . . . . . Q . . . . . . .
+. Q . . . . . . . . . . . . . .
+. . . . . . . . . . . . Q . . .
+. . . . . . . Q . . . . . . . .
+. . . . . . . . . . . . . . . Q
+. . Q . . . . . . . . . . . . .
+. . . . . . . . . Q . . . . . .
+. . . . . Q . . . . . . . . . .
+. . . Q . . . . . . . . . . . .
+. . . . . . . . . . . . . . Q .
+. . . . . . Q . . . . . . . . .
+. . . . . . . . . . . . . Q . .
+Solution Verified: True
+
+
+[1] Generate a Random N-Queens Board
+[2] Enter a Board Manually
+[3] Run 200-Case Analysis
+[4] Exit
+Enter your choice: Enter your choice: 4
+Exiting N-Queens solver. Goodbye!
